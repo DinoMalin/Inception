@@ -1,9 +1,9 @@
 FROM	debian:buster
 
-RUN     apt update -y
-RUN     apt upgrade -y
-RUN     apt install -y nginx
-RUN     apt install -y openssl
+RUN     apt-get update -y
+RUN     apt-get upgrade -y
+RUN     apt-get install -y nginx
+RUN     apt-get install -y openssl
 
 RUN     mkdir -p /etc/nginx/ssl
 RUN     openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
