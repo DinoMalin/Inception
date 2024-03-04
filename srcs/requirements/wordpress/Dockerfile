@@ -6,6 +6,7 @@ RUN apt-get -y install php7.3
 RUN apt-get -y install php-mysqli
 RUN apt-get -y install php-fpm
 RUN apt-get -y install wget
+RUN apt-get -y install sendmail
 
 EXPOSE 9000
 

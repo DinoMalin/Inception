@@ -47,7 +47,7 @@ else
 		--allow-root \
 		$WP_USER_LOGIN \
 		$WP_USER_EMAIL \
-		--user_pass=$WP_USER_EMAIL;
+		--user_pass=$WP_USER_PASSWORD;
 fi
 
 exec "$@"
