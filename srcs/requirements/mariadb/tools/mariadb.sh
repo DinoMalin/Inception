@@ -2,8 +2,7 @@
 
 # service mysql start;
 if [ -d "/var/lib/mysql/$MYSQL_DATABASE" ]
-then 
-
+then
 	echo "Database already exists"
 else
 mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --rpm > /dev/null

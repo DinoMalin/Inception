@@ -12,11 +12,9 @@ EXPOSE 9000
 RUN mkdir -p /run/php/ /var/www/html/wordpress/
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
-
 COPY ./tools/config_wordpress.sh /var/www
+
 RUN chmod +x /var/www/config_wordpress.sh
 ENTRYPOINT [ "/var/www/config_wordpress.sh" ]
-
-WORKDIR /var/www/html/
 
 CMD ["/usr/sbin/php-fpm7.3", "--nodaemonize"]
