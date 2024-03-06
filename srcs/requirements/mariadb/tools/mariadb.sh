@@ -17,9 +17,9 @@ GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';
 GRANT SELECT ON mysql.* TO '$MYSQL_USER'@'%';
 FLUSH PRIVILEGES;
 EOF
-
-mysqld --defaults-file=/etc/mysql/mariadb.conf.d/50-server.cnf
 fi
+mysqld --defaults-file=/etc/mysql/mariadb.conf.d/50-server.cnf
+
 
 # mysql -e "CREATE DATABASE IF NOT EXISTS  \`${MYSQL_DATABASE}\`;"
 # mysql -e "CREATE USER IF NOT EXISTS \`${MYSQL_USER}\`@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}';"

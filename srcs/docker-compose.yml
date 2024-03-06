@@ -4,55 +4,55 @@ services:
   nginx:
     container_name: nginx
     volumes:
-    - wordpress_data:/var/www/html
+      - wordpress_data:/var/www/html
     networks:
-    - network
+      - network
     depends_on:
-    - wordpress
+      - wordpress
     build: ./requirements/nginx
     env_file: .env
     ports:
-    - "443:443"
+      - "443:443"
     restart: on-failure
 
   mariadb:
     container_name: mariadb
     networks:
-    - network
+      - network
     build: ./requirements/mariadb
     env_file: .env
     volumes:
-    - mariadb_data:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
     restart: on-failure
     expose:
-    - "3306"
+      - "3306"
 
   wordpress:
     container_name: wordpress
     env_file: .env
     volumes:
-    - wordpress_data:/var/www/html
+      - wordpress_data:/var/www/html
     networks:
-    - network
-    build:
-      context: ./requirements/wordpress
-      dockerfile: Dockerfile
+      - network
+    build: ./requirements/wordpress
     depends_on:
-    - mariadb
+      - mariadb
     restart: on-failure
     expose:
-    - "9000"
+      - "9000"
     ports:
       - "9000:9000"
 
 volumes:
   wordpress_data:
+    name: wordpress_data
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
       device: '/home/jcario/data/wordpress'
   mariadb_data:
+    name: mariadb_data
     driver: local
     driver_opts:
       type: 'none'
