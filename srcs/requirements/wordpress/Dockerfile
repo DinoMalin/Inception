@@ -2,7 +2,6 @@ FROM debian:bullseye
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
-RUN apt-get -y install
 RUN apt-get -y install php7.4
 RUN apt-get -y install php-mysqli
 RUN apt-get -y install php-fpm
