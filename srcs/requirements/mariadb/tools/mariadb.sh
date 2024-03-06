@@ -18,4 +18,3 @@ FLUSH PRIVILEGES;
 EOF
 fi
 mysqld --defaults-file=/etc/mysql/mariadb.conf.d/50-server.cnf
-
