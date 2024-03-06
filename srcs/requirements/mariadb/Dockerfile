@@ -16,5 +16,3 @@ COPY	./tools/mariadb.sh usr/local/bin/
 
 RUN	chmod +x /usr/local/bin/mariadb.sh
 ENTRYPOINT	["/usr/local/bin/mariadb.sh"]
-
-# CMD	["mysqld", "--user=root", "--bind-address=0.0.0.0", "--skip-networking=0"]
